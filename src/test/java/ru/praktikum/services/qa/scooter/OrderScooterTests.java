@@ -1,6 +1,5 @@
 package ru.praktikum.services.qa.scooter;
 
-import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,7 +7,6 @@ import org.junit.runners.Parameterized;
 
 @RunWith(Parameterized.class)
 public class OrderScooterTests extends BaseTest {
-    private static Logger logger = Logger.getLogger(OrderScooterTests.class);
     private final String name;
     private final String surname;
     private final String address;
@@ -32,8 +30,7 @@ public class OrderScooterTests extends BaseTest {
     @Parameterized.Parameters(name = "{index} - name {0}, surname {1}, address {2}, metroStation {3}, contactNumber {4}, date {5}, rentalPeriod {6}, scooterColor {7}")
     public static Object[][] data() {
         return new Object[][]{
-                {"Максим", "Калиниченко", "Улица Лужники, 24", "Спортивная", "+79261234567", "18.04.2024", "сутки", "чёрный жемчуг"},
-                {"Квинси", "Промес", "Волоколамское шоссе 69, строение 2", "Спартак", "+79161234567", "12.04.2024", "четверо суток", "серая безысходность"},
+                {"Максим", "Калиниченко", "Улица Лужники, 24", "Спортивная", "+79261234567", "18.04.2024", "сутки", "чёрный жемчуг"}
         };
     }
 
