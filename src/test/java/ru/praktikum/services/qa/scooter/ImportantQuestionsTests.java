@@ -1,4 +1,4 @@
-package ru.praktikum_services.qa_scooter;
+package ru.praktikum.services.qa.scooter;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -30,13 +30,11 @@ public class ImportantQuestionsTests extends BaseTest {
 
     @Test
     public void testImportantQuestion() {
-        System.out.println("Starting the test");
         HomePageSamokat objHomePage = new HomePageSamokat(webDriver);
         // вызов вопроса из списка "Важные вопросы"
         objHomePage.clickImportantQuestionButton(question);
         // проверка ответа на вопрос
         objHomePage.checkImportantAnswerText(answer);
-        System.out.println("Test was successfull");
     }
 
 }

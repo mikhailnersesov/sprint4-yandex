@@ -1,10 +1,9 @@
-package ru.praktikum_services.qa_scooter;
+package ru.praktikum.services.qa.scooter;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CustomerInformationPageSamokat extends BasePage {
     // Локаторы

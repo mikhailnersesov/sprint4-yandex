@@ -1,5 +1,6 @@
-package ru.praktikum_services.qa_scooter;
+package ru.praktikum.services.qa.scooter;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.By;
@@ -8,14 +9,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 // created not to repeate the Before and After Methods
 public abstract class BaseTest {
-    protected WebDriver webDriver;
-
-    // Локаторы
     private final By TRAINING_SIMULATOR_TEXT = By.xpath(".//*[text()='Учебный тренажер']");
+    protected WebDriver webDriver;
 
     @Before
     public void setup() {

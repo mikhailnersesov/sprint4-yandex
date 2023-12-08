@@ -1,12 +1,14 @@
-package ru.praktikum_services.qa_scooter;
+package ru.praktikum.services.qa.scooter;
 
+import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 @RunWith(Parameterized.class)
-public class OrderScooterTests extends BaseTest{
+public class OrderScooterTests extends BaseTest {
+    private static Logger logger = Logger.getLogger(OrderScooterTests.class);
     private final String name;
     private final String surname;
     private final String address;
@@ -34,9 +36,9 @@ public class OrderScooterTests extends BaseTest{
                 {"Квинси", "Промес", "Волоколамское шоссе 69, строение 2", "Спартак", "+79161234567", "12.04.2024", "четверо суток", "серая безысходность"},
         };
     }
+
     @Test
     public void orderScooterViaTopOption() {
-        System.out.println("Starting the test");
         HomePageSamokat objHomePage = new HomePageSamokat(webDriver);
         // нажать верхнюю кнопку "Заказать"
         objHomePage.clickOrderTopButton();
@@ -49,12 +51,13 @@ public class OrderScooterTests extends BaseTest{
         // Подтвердить заказ
         objRentInformationPage.confirmOrder();
         // Проверить, что появилось всплывающее окно с сообщением об успешном создании заказа
+
         objHomePage.isOrderConfirmationTitleDisplayed();
-        System.out.println("Test was successfull");
+
     }
+
     @Test
     public void orderScooterViaBottomOption() {
-        System.out.println("Starting the test");
         HomePageSamokat objHomePage = new HomePageSamokat(webDriver);
         // нажать нижнюю кнопку "Заказать"
         objHomePage.clickBottomOrderButton();
@@ -67,6 +70,5 @@ public class OrderScooterTests extends BaseTest{
         // Проверить, что появилось всплывающее окно с сообщением об успешном создании заказа
         boolean orderConfirmationTitleDisplayed = objHomePage.isOrderConfirmationTitleDisplayed();
         Assert.assertTrue("Всплывающее окно с сообщением об успешном создании заказа НЕ появилось", orderConfirmationTitleDisplayed);
-        System.out.println("Test was successfull");
     }
 }
